@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mynginx
+spec:
+  containers:
+  - image: nginx
+    name: mynginx
+
+## 생성
+# kubectl apply -f ~/k8s_mlops/pod/1-base.yaml
+## 확인
+# kubectl get pod -o wide -w
+## 삭제
+# kubectl delete -f ~/k8s_mlops/pod/1-base.yaml
+## 확인
+# kubectl get pod

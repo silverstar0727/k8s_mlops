@@ -1,0 +1,11 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: ml
+          image: temp
+    restartPolicy: Never
