@@ -7,5 +7,10 @@ spec:
     spec:
       containers:
         - name: ml
-          image: temp
-    restartPolicy: Never
+          image: silverstar456/k8s_mlops:simple
+      restartPolicy: Never
+
+# kubectl apply -f ~/k8s_mlops/job
+# kubectl get job
+# kubectl get pod
+# kubectl logs -f {pod-name}
