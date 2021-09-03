@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: base
+  name: rollup
 spec:
   replicas: 3
   strategy:
@@ -20,3 +20,10 @@ spec:
       containers:
       - name: nginx
         image: nginx
+
+# kubectl apply --record -f ~/k8s_mlops/deployment/3-rollingupdate.yaml
+# kubectl get deployment
+## 이미지 업데이트
+# kubectl set image deployment rollup nginx=nginx:1.9.1 --record
+# kubectl get pod
+# kubectl delete -f ~/k8s_mlops/deployment/3-rollingupdate.yaml

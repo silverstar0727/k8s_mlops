@@ -15,3 +15,9 @@ spec:
       - name: nginx
         image: nginx
 
+# kubectl apply -f ~/k8s_mlops/deployment/1-base.yaml
+# kubectl describe deployment base
+# kubectl get pod
+# kubectl delete pod {pod-name}
+# kubectl get pod
+# kubectl delete -f ~/k8s_mlops/deployment/1-base.yaml
