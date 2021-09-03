@@ -1,2 +1,2 @@
 # k8s_mlops
-kuberenetes with mlops
+Kubernetes for Machine Learning
