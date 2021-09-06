@@ -8,8 +8,8 @@ spec:
   resources:
     requests:
       storage: 10Gi
-  storageClassName: nfs-storage
-  #storageclassName: premium-rwo
+  #storageClassName: nfs-storage
+  storageClassName: premium-rwo
 
 # kubectl apply -f ~/k8s_mlops/storage/1-nfs-storage-pvc.yaml
 # kubectl get pvc

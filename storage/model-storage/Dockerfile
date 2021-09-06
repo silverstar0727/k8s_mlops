@@ -1,5 +1,7 @@
 FROM tensorflow/tensorflow
 
-COPY train.py .
+WORKDIR /app
+
+COPY . .
 
 ENTRYPOINT ["python", "train.py"]
