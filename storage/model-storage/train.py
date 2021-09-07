@@ -31,4 +31,7 @@ model.fit(train_images, train_labels, epochs=5)
 # evaluation
 test_loss, test_acc = model.evaluate(test_images,  test_labels, verbose=2)
 
+import datetime
+model.save('/model_storage/model-%s.h5' % datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+
 print('\n테스트 정확도:', test_acc)

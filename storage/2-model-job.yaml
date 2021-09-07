@@ -7,7 +7,7 @@ spec:
     spec:
       containers:
       - name: ml
-        image: tensorflow/tensorflow
+        image: silverstar456/k8s_mlops:model-storage
         volumeMounts:
         - mountPath: "/model_storage"
           name: model-storage
@@ -15,7 +15,7 @@ spec:
       volumes:
       - name: model-storage
         persistentVolumeClaim:
-          claimName: data1-minio1-ss-0-2
+          claimName: data0-minio1-ss-0-0
   backoffLimit: 0
 
 # docker build -t silverstar456/k8s_mlops:model-storage ~/k8s_mlops/storage/model-storage
