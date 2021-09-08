@@ -15,7 +15,7 @@ spec:
       volumes:
       - name: model-storage
         persistentVolumeClaim:
-          claimName: data0-minio1-ss-0-0
+          claimName: data0-test-pool-0-0
   backoffLimit: 0
 
 # docker build -t silverstar456/k8s_mlops:model-storage ~/k8s_mlops/storage/model-storage
