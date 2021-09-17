@@ -4,5 +4,5 @@ Kubernetes for Machine Learning
 1. Pod
 2. Deployment
 3. Job
-4. minio
-5. Prometheus, Grafana
+4. minio (Storage)
+5. Prometheus, Grafana (Monitoring)
