@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ml-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: ml
+          image: silverstar456/k8s_mlops:minio
+          args: ["35.202.207.18", "rXkcCEGT8pq6F8CU", "IQNOh7EtPjR9ZgujPp7NIw2KISr4FSz5"] # args 집어넣기
+      restartPolicy: Never
+  backoffLimit: 0 # 실패시 다시시작 옵션
+
+
+# docker build -t silverstar456/k8s_mlops:minio ~/k8s_mlops/storage/minio-test
+# docker login
+# docker push silverstar456/k8s_mlops:minio
+
+# kubectl apply -f 1-minio.yaml
+# kubectl get pod
+# kubectl logs -f {pod_name}
