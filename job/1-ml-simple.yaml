@@ -10,6 +10,10 @@ spec:
           image: silverstar456/k8s_mlops:simple
       restartPolicy: Never
 
+# docker build -t temp silverstar456/k8s_mlops:simple .
+# docker login
+# docker push silverstar456/k8s_mlops:simple
+
 # kubectl apply -f ~/k8s_mlops/job
 # kubectl get job
 # kubectl get pod

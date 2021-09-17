@@ -16,3 +16,8 @@ spec:
               memory: "5Gi"
       restartPolicy: Never
   backoffLimit: 0 # 실패시 다시시작 옵션
+
+# docker build -t silverstar456/k8s_mlops:resource ~/k8s_mlops/job/resource
+# docker push silverstar456/k8s_mlops:resource
+
+# kubectl get apply -f ~/k8s_mlops/job/2-resource.yaml
