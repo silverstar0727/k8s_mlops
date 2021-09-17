@@ -16,18 +16,6 @@ gcloud container clusters create $CLUSTER_NAME \
     --machine-type=n1-standard-2 \
     --node-locations=us-central1-a
 
-## kubectl minio 설치
-wget https://github.com/minio/operator/releases/download/v4.2.2/kubectl-minio_4.2.2_linux_amd64 -O kubectl-minio
-chmod +x kubectl-minio
-sudo mv kubectl-minio /usr/local/bin/
-
-# kubectl minio version
-kubectl minio init
-# kubectl minio proxy -n minio-operator
-
-
-
-
 
 """
 gcloud container node-pools create train \
@@ -94,62 +82,3 @@ helm install nfs stable/nfs-server-provisioner \
 # kubectl get svc -n storage
 # kubectl get sc -n storage
 
-
-
-
-
-
-
-
-
-
-
-
-"""
-# helm minio operator 추가 operator -> blog로 수동 minio 설치
-helm repo add minio https://operator.min.io/
-helm repo update
-
-# 설치
-helm fetch --untar minio/minio-operator
-# 수정 후 실행. 개수(storage class)
-helm install --namespace minio-operator --create-namespace minio-op ./minio-operator
-
-# 키 받기
-kubectl get secret $(kubectl get serviceaccount console-sa --namespace minio-operator -o jsonpath="{.secrets[0].name}") \
-  --namespace minio-operator -o jsonpath="{.data.token}" | base64 --decode
-# 포트포워딩
-kubectl --namespace minio-operator port-forward svc/console 9090:9090
-
-##### custom 안하는 다른설치방법
-helm install --namespace minio-operator --create-namespace --generate-name minio/minio-operator
-##### 또다른 설치... https://blog.min.io/object_storage_as_a_service_on_minio/
-##### or  https://min.io/download#/kubernetes
-
-
-
-## minio 최신버전으로 한번 해보기
-helm fetch --untar stable/minio --version 5.0.30
-
-
-## ==== value를 수정한 뒤 실행해주세요.
-helm install minio ./minio --namespace storage
-kubectl get pod -n storage
-kubectl get pv -n storage
-kubectl get pvc -n storage
-
-#export INGRESS_IP=$(kubectl get svc -n storage minio -ojsonpath="{.status.loadBalancer.ingress[0].ip}")
-#echo $INGRESS_IP
-
-export POD_NAME=$(kubectl get pods --namespace storage -l "release=minio" -o jsonpath="{.items[0].metadata.name}")
-kubectl port-forward $POD_NAME 9000 --namespace storage
-
-"""
-
-"""
-kubectl delete -f k8s_mlops/storage/minio/minio-standalone-storageclass.yaml
-kubectl delete -f k8s_mlops/storage/minio/minio-standalone-pv.yaml
-kubectl delete -f k8s_mlops/storage/minio/minio-standalone-pvc.yaml
-kubectl delete -f k8s_mlops/storage/minio/minio-standalone-deployment.yaml
-kubectl delete -f k8s_mlops/storage/minio/minio-standalone-service.yaml
-"""
