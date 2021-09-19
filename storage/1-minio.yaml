@@ -8,7 +8,7 @@ spec:
       containers:
         - name: ml
           image: silverstar456/k8s_mlops:minio
-          args: ["35.184.140.29", "uVB4DxqdplXq8fUp", "1pIy4M9z8lExDSKUT5Yo6R5LgnbiHzaz"]
+          args: ["35.184.174.56", "CalESwWC5H3okoYX", "LbuKUWKKpihukid6CvsVSPiH3hY7Bp2W"]
       restartPolicy: Never
   backoffLimit: 0 # 실패시 다시시작 옵션
 

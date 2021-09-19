@@ -8,5 +8,8 @@ kubectl create namespace monitoring
 helm install -n monitoring monitor prometheus-community/kube-prometheus-stack
 
 # prometheus, grafana port-forwarding
-kubectl -n monitoring port-forward svc/monitor-kube-prometheus-st-prometheus 9000:9090
+kubectl -n monitoring port-forward svc/monitor-kube-prometheus-st-prometheus 9010:9090
 kubectl -n monitoring port-forward svc/monitor-grafana 9000:80
+
+# id: admin
+# pw: prom-operator
