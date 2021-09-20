@@ -8,7 +8,7 @@ spec:
       containers:
         - name: ml
           image: silverstar456/k8s_mlops:resource
-          args: ["3", "softmax"] # args 집어넣기
+          args: ["3", "relu"] # args 집어넣기
           # 리소스 사용량
           resources:
             limits: 
