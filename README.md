@@ -6,3 +6,4 @@ Kubernetes for Machine Learning
 3. Job
 4. minio-operator (Storage)
 5. Prometheus, Grafana (Monitoring)
+6. Kubeflow(ML Pipeline)
