@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlflow-deployment
+spec:
+  selector:
+    matchLabels:
+      run: mlflow
+  template:
+    metadata:
+      labels:
+        run: mlflow
+    spec:
+      containers:
+      - name: mlflow
+        image: silverstar456/k8s_mlops:mlflow
+        ports: 
+        - containerPort: 8080
