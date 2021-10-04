@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frcnn-deployment
+spec:
+  selector:
+    matchLabels:
+      run: frcnn
+  template:
+    metadata:
+      labels:
+        run: frcnn
+    spec:
+      containers:
+      - name: frcnn
+        image: silverstar456/k8s_mlops:frcnn-deploy
+        ports: 
+        - containerPort: 8080
