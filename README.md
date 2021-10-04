@@ -7,4 +7,7 @@ Kubernetes for Machine Learning
 3. Job([blog](https://velog.io/@djm0727/MLOps-in-K8s3.-Job))
 4. minio-operator (Storage) ([blog](https://velog.io/@djm0727/MLOps-in-K8s4.-Minio-Storage))
 5. Prometheus, Grafana (Monitoring) ([blog](https://velog.io/@djm0727/MLOps-in-K8s5.-Monitoring))
-6. Kubeflow(ML Pipeline)
+6. Flask model deploment(using Loadbalacer) ([blog](https://velog.io/@djm0727/MLOps-in-K8s6.-Model-Deploy))
+7. MLflow (Model Registry)
+8. Airflow (ML Pipeline)
+9. Kubeflow (ML Pipeline)
