@@ -14,8 +14,8 @@ Kubernetes for Machine Learning
 - Prometheus, Grafana (Monitoring) ([blog](https://velog.io/@djm0727/MLOps-in-K8s5.-Monitoring))
 
 ### Model Deployment
-- Flask(REST API) model deploment(using Loadbalacer) ([blog](https://velog.io/@djm0727/MLOps-in-K8s6.-Model-Deploy))
-- BentoML (using gRPC)
+- Flask(REST API, Loadbalancer) ([blog](https://velog.io/@djm0727/MLOps-in-K8s6.-Model-Deploy))
+- BentoML(gRPC)
 
 ### Pipeline
 - Apache Airflow
