@@ -2,7 +2,7 @@
 Kubernetes for Machine Learning
 
 ### Installation
-Infra([blog](https://velog.io/@djm0727/GKE%EC%97%90%EC%84%9C-%EC%9D%B8%ED%94%84%EB%9D%BC-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0))
+- Infra([blog](https://velog.io/@djm0727/GKE%EC%97%90%EC%84%9C-%EC%9D%B8%ED%94%84%EB%9D%BC-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0))
 
 ### K8s Basic
 - Pod([blog](https://velog.io/@djm0727/MLOps-in-K8s1.-Pod))
