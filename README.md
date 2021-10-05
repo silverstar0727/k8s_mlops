@@ -22,4 +22,4 @@ Kubernetes for Machine Learning
 - Kubeflow
 
 ### Model Registry
-- MLflow
+- [MLflow](https://velog.io/@djm0727/MLOps-in-K8s7.-MLflow-model-registry)
