@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlflow-deployment
+spec:
+  selector:
+    matchLabels:
+      app: mlflow-deployment
+  template:
+    metadata:
+      labels:
+        app: mlflow-deployment
+    spec:
+      containers:
+      - name: mlflow-deployment
+        # 미리 생성해 둔 mlflow image를 사용합니다.
+        image: pdemeulenaer/mlflow-server:537 
+        imagePullPolicy: IfNotPresent #Always
+        # args로 배포할 포트와 호스트, backend-store등을 넣습니다.
+        args:
+        - --host=0.0.0.0
+        - --port=5000
+        - --backend-store-uri=postgresql://mlflow_user:mlflow_pwd@10.19.242.150:5432/mlflow_db # 가운데 ip를 본인의 postgres cluster에 맞게 수정해줍니다.
+        - --default-artifact-root=s3://mlflow/
+        - --workers=2
+        # 환경 변수로 minio에 대한 정보를 넣습니다.
+        env:
+        - name: MLFLOW_S3_ENDPOINT_URL
+          value: http://34.71.39.91:9000/  # 본인의 minio external ip에 맞게 수정해줍니다.
+        - name: AWS_ACCESS_KEY_ID
+          value: "minio"
+        - name: AWS_SECRET_ACCESS_KEY
+          value: "minio123"
+        # 5000번 포트로 노출합니다.
+        ports:
+        - name: http
+          containerPort: 5000
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mlflow-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+      name: http
+  selector:
+    app: mlflow-deployment
