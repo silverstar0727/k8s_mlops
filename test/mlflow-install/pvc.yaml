@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mlflow-pvc-2
+spec:
+  storageClassName: premium-rwo
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
