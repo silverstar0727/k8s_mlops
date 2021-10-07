@@ -1,0 +1,7 @@
+tensorflow==2.6.0
+mlflow
+minio
+sklearn
+pandas
+numpy
+wandb
