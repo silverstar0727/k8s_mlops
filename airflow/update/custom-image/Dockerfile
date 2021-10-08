@@ -1,6 +1,7 @@
 FROM apache/airflow:2.1.0
 
-COPY . .
+COPY requirements.txt ./
+COPY ./dags/ \${AIRFLOW_HOME}/dags/
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
