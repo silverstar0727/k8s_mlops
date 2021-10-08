@@ -14,7 +14,7 @@ wget https://github.com/kubeflow/kfctl/releases/download/v1.2.0/kfctl_v1.2.0-0-g
 tar -xvf kfctl_v1.2.0-0-gbc038f9_darwin.tar.gz
 
 # 파일 삭제
-rm -rf https://github.com/kubeflow/kfctl/releases/download/v1.2.0/kfctl_v1.2.0-0-gbc038f9_darwin.tar.gz
+rm -rf kfctl_v1.2.0-0-gbc038f9_darwin.tar.gz
 
 # url의 yaml파일 지정
 export CONFIG_URI="https://raw.githubusercontent.com/kubeflow/manifests/v1.2-branch/kfdef/kfctl_k8s_istio.v1.2.0.yaml"
