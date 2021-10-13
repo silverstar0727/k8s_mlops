@@ -7,7 +7,7 @@ cd ~/Desktop/kubeflow-1.3.0
 # https://github.com/kubeflow/manifests#prerequisites
 wget https://github.com/kubernetes-sigs/kustomize/releases/download/v3.2.0/kustomize_3.2.0_darwin_amd64
 
-# move directory
+# chmod and move directory
 chmod u+x kustomize_3.2.0_darwin_amd64
 sudo mv kustomize_3.2.0_darwin_amd64 /usr/local/bin/kustomize
 
@@ -22,3 +22,9 @@ while ! kustomize build example | kubectl apply -f -; do echo "Retrying to apply
 
 # port forwarding
 kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+
+#kubectl expose deploy istio-ingressgateway --type=LoadBalancer --name=web-lb -n istio-system
+
+## ===== default id and passwords
+# id: user@example.com
+# pwd: 12341234
